@@ -5,7 +5,7 @@
 ## File name: PTG.R
 ## Task: define functions for PTG algorithm
 ## Last update: 2019/12/16
-## ## For more information on this algorithm, please see our paper : https://www.nature.com/articles/s41598-021-81850-z (Published: 26 February 2021)
+## For more information on this algorithm, please see our paper : https://www.nature.com/articles/s41598-021-81850-z (Published: 26 February 2021)
 ## ---------------------------------------------------------------------------------------------------------------------------------
 
 ## require PTG_length_parameter.cpp file and dir_PTG (directory containing "PTG.R" and "PTG_length_parameter.cpp" files)
