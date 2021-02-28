@@ -5,6 +5,7 @@
 ## File name: PTG.R
 ## Task: define functions for PTG algorithm
 ## Last update: 2019/12/16
+## ## For more information on this algorithm, please see our paper : https://www.nature.com/articles/s41598-021-81850-z (Published: 26 February 2021)
 ## ---------------------------------------------------------------------------------------------------------------------------------
 
 ## require PTG_length_parameter.cpp file and dir_PTG (directory containing "PTG.R" and "PTG_length_parameter.cpp" files)
@@ -298,8 +299,8 @@ GTM_LDLV = function(grid_sum,data,shape,rate,epsilon,Iter,burn.in.samples,maxit_
     # sampling of g
     vecG = rowSums(C)
     G = diag(vecG)
-    diagf = diag(colSums(Y * Y))
-    sigmag = ginv((beta * G %*% diagf) + inCst_g)
+    diagh = diag(colSums(H * H))
+    sigmag = ginv((beta * G %*% diagh) + inCst_g)
     sigmag = (sigmag + t(sigmag))/2
     vecCtXH = diag(C %*% data %*% H)
     myug = as.vector(beta * sigmag %*% vecCtXH)
@@ -527,8 +528,8 @@ itp_tuning = function(itp,data,shape = 1,rate = 1,Iter = 30,maxit_BFGS = 10,maxi
     # calculation of g
     vecG = rowSums(C)
     G = diag(vecG)
-    diagf = diag(colSums(Y * Y))
-    sigmag = ginv((beta * G %*% diagf) + inCst_g)
+    diagh = diag(colSums(H * H))
+    sigmag = ginv((beta * G %*% diagh) + inCst_g)
     sigmag = (sigmag + t(sigmag))/2
     vecCtXH = diag(C %*% data %*% H)
     myug = as.vector(beta * sigmag %*% vecCtXH)
